@@ -1,3 +1,5 @@
+object/
+
 # Pygame build process: config.py setup.py
 /Setup
 *.pyc

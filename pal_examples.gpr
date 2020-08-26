@@ -1,0 +1,33 @@
+--
+--  The author disclaims copyright to this source code.  In place of
+--  a legal notice, here is a blessing:
+--
+--    May you do good and not evil.
+--    May you find forgiveness for yourself and forgive others.
+--    May you share freely, not taking more than you give.
+--
+
+project Pal_Examples is
+
+   for Languages   use ("Ada");
+   for Source_Dirs use ("examples/", "source/");
+   for Object_Dir  use "object";
+   for Exec_Dir    use "binary";
+   for Main        use ("pal_stars.adb");
+
+  for Create_Missing_Dirs use "True";
+
+   package Builder is
+      for Default_Switches ("Ada")    use
+        ("-g",
+         "-gnatf",
+        "-gnatwa",
+        "-gnatwj",
+        "-gnatw.x",
+        "-gnat2012",
+        "-gnaty",
+        "-gnatyM99");
+   end Builder;
+
+end Pal_Examples;
+
